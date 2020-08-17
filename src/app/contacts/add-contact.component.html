@@ -1,0 +1,127 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSave()">
+  <div class="form-group" [ngClass]="{'error': contactForm.controls.name.invalid && (contactForm.controls.name.dirty || submitted)}">
+    <label for="name">Name *</label>
+    <em *ngIf="(contactForm.controls.name.dirty || submitted) && contactForm.controls.name.errors?.required">Name is required</em>
+    <em *ngIf="contactForm.controls.name.errors?.nameExists">Name already exists</em>
+    <input type="text" class="form-control" id="name" formControlName="name" maxlength="100">
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="gender" [value]="gender.Male" formControlName="gender" id="male">
+    <label class="form-check-label" for="male">
+      Male
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="gender" [value]="gender.Female" formControlName="gender" id="female">
+    <label class="form-check-label" for="female">
+      Female
+    </label>
+  </div>
+
+  <h5 style="font-size:17px;" class="border-bottom font-weight-bold pb-1 pt-3">Contact information</h5>
+  <div class="form-row">
+    <div class="form-group col-md-6" [ngClass]="{'error': (contactForm.controls.email.invalid && contactForm.controls.email.touched) || contactForm.controls.email.errors?.emailExists}">
+      <label for="email">Email</label>
+      <em *ngIf="contactForm.controls.email.errors?.emailExists">Email already exists</em>
+      <em *ngIf="contactForm.controls.email.touched && contactForm.controls.email.errors?.pattern">Enter a valid email address</em>
+      <input type="email" class="form-control" id="email" formControlName="email" maxlength="320">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="phone">Telephone</label>
+      <input type="tel" class="form-control" id="phone" formControlName="phone" maxlength="17">
+    </div>
+  </div>
+    <h5 style="font-size:17px;" class="border-bottom font-weight-bold pb-1 pt-3">Geo-Location</h5>
+      <div class="form-row">
+      <div class="form-group col-md-6" [ngClass]="{'error': (contactForm.controls.email.invalid && contactForm.controls.email.touched) || contactForm.controls.email.errors?.emailExists}">
+    <label for="idea">Business Name (Idea)</label>
+    <input type="idea" class="form-control" id="idea" formControlName="idea" maxlength="100">
+    </div>
+        <div class="form-group col-md-6">
+    <label for="country">Country</label>
+    <input type="country" class="form-control" id="country" formControlName="country" maxlength="100">
+  </div>
+      <div class="form-group col-md-6">
+    <label for="location">City</label>
+    <input type="text" class="form-control" id="location" formControlName="location" maxlength="100">
+  </div>
+    </div>
+    <h5 style="font-size:17px;" class="border-bottom font-weight-bold pb-1 pt-3">Business Needs</h5>
+      <div class="form-row">
+      <div class="form-group col-md-6" [ngClass]="{'error': (contactForm.controls.email.invalid && contactForm.controls.email.touched) || contactForm.controls.email.errors?.emailExists}">
+    <label for="summary"> Briefly summarize what your company does.</label>
+    <input type="text" class="form-control" id="summary" formControlName="summary" maxlength="365">
+    </div>
+        <div class="form-group col-md-6">
+    <label for="problemSolving"> What problem do you solve for your customers?</label>
+    <input type="text" class="form-control" id="problemSolving" formControlName="problemSolving" maxlength="365">
+  </div>
+      <div class="form-group col-md-6">
+    <label for="targetCustomer">Describe your target customer or market segments.</label>
+    <input type="text" class="form-control" id="text" formControlName="targetCustomer" maxlength="365">
+  </div>
+    <div class="form-group col-md-6">
+    <label for="employees">How many employees do you need?</label>
+    <input type="number" class="form-control" id="number" formControlName="employees" maxlength="365">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="whyou"> Why are you the right people to build this business?</label>
+    <input type="text" class="form-control" id="text" formControlName="whyou" maxlength="365">
+  </div>
+      <div class="form-group col-md-6">
+    <label for="competitor"> Who will your customers also consider?</label>
+    <input type="text" class="form-control" id="text" formControlName="competitor" maxlength="365">
+  </div>
+    </div>
+
+
+<h5 style="font-size:17px;" class="border-bottom font-weight-bold pb-1 pt-3">Forecast</h5>
+      <div class="form-row">
+      <div class="form-group col-md-6" [ngClass]="{'error': (contactForm.controls.email.invalid && contactForm.controls.email.touched) || contactForm.controls.email.errors?.emailExists}">
+    <label for="nextYearSells">How much do you plan to sell in the next year?</label>
+    <input type="financing" class="form-control" id="nextYearSells" formControlName="nextYearSells" maxlength="365">
+    </div>
+        <div class="form-group col-md-6">
+    <label for="problemSolving"> What are your long-term sales goals?</label>
+    <input type="financing" class="form-control" id="problemSolving" formControlName="problemSolving" maxlength="365">
+  </div>
+      <div class="form-group col-md-6">
+    <label for="targetCustomer">How much do you plan to spend per month?</label>
+    <input type="financing" class="form-control" id="text" formControlName="targetCustomer" maxlength="365">
+  </div>
+        <div class="form-group col-md-6">
+    <label for="investor">Describe your financing plans. (ex. loans,  your own money.etc..)</label>
+    <input type="financing" class="form-control" id="investor" formControlName="investor" maxlength="365">
+  </div>
+    <div class="form-group col-md-6">
+    <label for="goods">Goods estimation</label>
+    <input type="financing" class="form-control" id="goods" formControlName="goods" maxlength="365">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="investement">Capital</label>
+    <input type="financing" class="form-control" id="investement" formControlName="investement" maxlength="365">
+  </div>
+      <div class="form-group col-md-6">
+    <label for="salaries">How much salaries do you entend to pay monthely? </label>
+    <input type="financing" class="form-control" id="salaries" formControlName="salaries" maxlength="365">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="taxe">Taxes (ex.21%)</label>
+    <input type="financing" class="form-control" id="taxe" formControlName="taxe" maxlength="365">
+  </div>
+    <div class="form-group col-md-6">
+    <label for="currency">Currency</label>
+    <input type="symbol" class="form-control" id="currency" formControlName="currency" maxlength="32">
+  </div>
+    </div>
+
+
+  <div class="text-right">
+    <button type="button" class="btn btn-light mr-2" (click)="onCancel()">Cancel</button>
+    <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid && submitted">Save</button>
+  </div>
+</form>
+
+
+
