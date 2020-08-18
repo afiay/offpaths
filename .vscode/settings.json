@@ -3,5 +3,6 @@
         "node_modules{,/**}",
         ".vscode{,/**}"
     ],
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/1806ed86-16a7-4140-ad86-8c807827443a/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Offpaths-contact"
 }
