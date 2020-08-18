@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - contact-job
+name: Build and deploy Node.js app to Azure Web App - offpaths-contact
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v1
       with:
-        app-name: 'contact-job'
+        app-name: 'offpaths-contact'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a1f59bc6b4804d81a7ea6433b5a6d342 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_4d6e1a4d5b7046efaca19dbdc67e0290 }}
         package: .
